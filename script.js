@@ -1,1 +1,1 @@
-alert("EL JAVASCRIPT FUNCIONA");
+document.body.style.backgroundColor = "red";
