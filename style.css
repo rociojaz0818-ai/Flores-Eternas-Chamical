@@ -716,13 +716,14 @@ h2 span {
     display: block;
     border-radius: 4px;
 }
+
 .themed-gallery,
 .clips-gallery {
     display: grid;
-
     grid-template-columns: repeat(4, 1fr);
-
     gap: 15px;
+}
+
 .gallery-item {
     width: 100%;
     aspect-ratio: 4 / 5;
@@ -737,6 +738,7 @@ h2 span {
     height: 100%;
     object-fit: cover;
     display: block;
+}
 }
 
 
