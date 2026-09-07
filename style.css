@@ -5,7 +5,6 @@
     font-style: normal;
 }
 
-
 /* =====================================================
    VARIABLES
 ===================================================== */
@@ -16,11 +15,9 @@
     --rosa-claro: #FBD9E5;
     --rosa-oscuro: #C43670;
     --durazno: #F3CC97;
-
     --texto: #5A2942;
     --blanco: #FFFDFC;
 }
-
 
 /* =====================================================
    RESET
@@ -57,7 +54,6 @@ button {
     font: inherit;
 }
 
-
 /* =====================================================
    LLUVIA DE FLORES
 ===================================================== */
@@ -73,54 +69,36 @@ button {
 .flower-particle {
     position: absolute;
     top: -60px;
-
     color: var(--rosa-claro);
-
     opacity: 0.65;
-
     font-size: 18px;
-
     animation-name: flowerFall;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-
-    text-shadow:
-        0 2px 8px rgba(196, 54, 112, 0.15);
+    text-shadow: 0 2px 8px rgba(196, 54, 112, 0.15);
 }
 
 @keyframes flowerFall {
-
     0% {
-        transform:
-            translate3d(0, -60px, 0)
-            rotate(0deg);
+        transform: translate3d(0, -60px, 0) rotate(0deg);
     }
 
     25% {
-        transform:
-            translate3d(25px, 25vh, 0)
-            rotate(90deg);
+        transform: translate3d(25px, 25vh, 0) rotate(90deg);
     }
 
     50% {
-        transform:
-            translate3d(-20px, 50vh, 0)
-            rotate(180deg);
+        transform: translate3d(-20px, 50vh, 0) rotate(180deg);
     }
 
     75% {
-        transform:
-            translate3d(30px, 75vh, 0)
-            rotate(270deg);
+        transform: translate3d(30px, 75vh, 0) rotate(270deg);
     }
 
     100% {
-        transform:
-            translate3d(-10px, 110vh, 0)
-            rotate(360deg);
+        transform: translate3d(-10px, 110vh, 0) rotate(360deg);
     }
 }
-
 
 /* =====================================================
    ESTRUCTURA
@@ -138,7 +116,6 @@ section {
     padding: 120px 8%;
 }
 
-
 /* =====================================================
    NAVEGACIÓN
 ===================================================== */
@@ -146,31 +123,21 @@ section {
 .navbar {
     position: sticky;
     top: 0;
-
     width: 100%;
-
     padding: 20px 7%;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     background: rgba(251, 244, 235, 0.94);
-
     backdrop-filter: blur(15px);
-
     border-bottom: 1px solid rgba(196, 54, 112, 0.12);
-
     z-index: 100;
 }
 
 .logo {
     font-family: "DelRose", "Times New Roman", serif;
-
     font-size: 32px;
-
     color: var(--rosa-oscuro);
-
     transition: 0.3s ease;
 }
 
@@ -186,26 +153,18 @@ section {
 
 .nav-menu a {
     position: relative;
-
     font-size: 15px;
-
-    transition:
-        color 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 .nav-menu a::after {
     content: "";
-
     position: absolute;
-
     left: 0;
     bottom: -6px;
-
     width: 0;
     height: 2px;
-
     background: var(--rosa-oscuro);
-
     transition: width 0.3s ease;
 }
 
@@ -219,20 +178,15 @@ section {
 
 .menu-toggle {
     display: none;
-
     width: 46px;
     height: 46px;
-
+    border: none;
     border-radius: 50%;
-
     background: var(--rosa-oscuro);
     color: var(--crema);
-
     cursor: pointer;
-
     font-size: 22px;
 }
-
 
 /* =====================================================
    TEXTOS
@@ -240,14 +194,10 @@ section {
 
 .section-number {
     margin-bottom: 20px;
-
     color: var(--rosa-oscuro);
-
     font-family: Arial, sans-serif;
-
     font-size: 11px;
     font-weight: bold;
-
     letter-spacing: 3px;
 }
 
@@ -269,28 +219,22 @@ h1 {
 
 h2 {
     color: var(--rosa-oscuro);
-
     font-size: clamp(50px, 7vw, 90px);
-
     line-height: 0.95;
 }
 
 h1 span,
 h2 span {
     display: block;
-
     color: var(--crema);
 }
 
 .section-description {
     max-width: 600px;
-
     margin-top: 25px;
-
     font-size: 20px;
     line-height: 1.7;
 }
-
 
 /* =====================================================
    BOTONES
@@ -300,18 +244,12 @@ h2 span {
 .secondary-button,
 .card-button,
 .contact-link {
-
     display: inline-flex;
-
     align-items: center;
     justify-content: center;
-
     min-height: 52px;
-
     padding: 14px 28px;
-
     border-radius: 100px;
-
     transition:
         transform 0.3s ease,
         background 0.3s ease,
@@ -326,9 +264,7 @@ h2 span {
 
 .main-button:hover {
     transform: translateY(-4px);
-
-    box-shadow:
-        0 15px 30px rgba(90, 41, 66, 0.16);
+    box-shadow: 0 15px 30px rgba(90, 41, 66, 0.16);
 }
 
 .secondary-button {
@@ -339,10 +275,8 @@ h2 span {
 .secondary-button:hover {
     background: var(--crema);
     color: var(--rosa-oscuro);
-
     transform: translateY(-4px);
 }
-
 
 /* =====================================================
    HERO
@@ -350,10 +284,8 @@ h2 span {
 
 .hero {
     min-height: 90vh;
-
     display: flex;
     align-items: center;
-
     overflow: hidden;
 }
 
@@ -363,21 +295,15 @@ h2 span {
 
 .hero h1 {
     font-size: clamp(65px, 10vw, 150px);
-
     line-height: 0.82;
-
     letter-spacing: -2px;
-
     margin-bottom: 40px;
 }
 
 .hero-text {
     max-width: 620px;
-
     margin-bottom: 35px;
-
     color: var(--crema);
-
     font-size: 22px;
     line-height: 1.6;
 }
@@ -390,35 +316,24 @@ h2 span {
 
 .hero-decoration {
     position: absolute;
-
     right: 7%;
     bottom: 8%;
-
     color: rgba(251, 244, 235, 0.18);
-
     font-size: clamp(130px, 20vw, 300px);
-
     pointer-events: none;
-
     animation: floatingFlower 5s ease-in-out infinite;
 }
 
 @keyframes floatingFlower {
-
     0%,
     100% {
-        transform:
-            rotate(-8deg)
-            translateY(0);
+        transform: rotate(-8deg) translateY(0);
     }
 
     50% {
-        transform:
-            rotate(8deg)
-            translateY(-18px);
+        transform: rotate(8deg) translateY(-18px);
     }
 }
-
 
 /* =====================================================
    NOSOTROS
@@ -426,55 +341,40 @@ h2 span {
 
 .about-section {
     background: var(--crema);
-
     border-radius: 60px 60px 0 0;
 }
 
 .about-content {
     display: grid;
-
     grid-template-columns: 1.4fr 0.6fr;
-
     gap: 80px;
-
     align-items: center;
 }
 
 .about-text p {
     margin-bottom: 25px;
-
     font-size: 23px;
-
     line-height: 1.65;
 }
 
 .about-phrase {
     padding: 50px 40px;
-
     background: var(--rosa-claro);
-
-    border-radius:
-        48% 52% 50% 45%;
-
+    border-radius: 48% 52% 50% 45%;
     text-align: center;
 }
 
 .about-phrase span {
     display: block;
-
     margin-bottom: 15px;
-
     color: var(--rosa-oscuro);
-
     font-size: 45px;
 }
 
 .about-phrase p {
     font-size: 22px;
-
     line-height: 1.4;
 }
-
 
 /* =====================================================
    SERVICIOS
@@ -486,21 +386,15 @@ h2 span {
 
 .services-grid {
     display: grid;
-
     grid-template-columns: repeat(4, 1fr);
-
     gap: 18px;
 }
 
 .service-card {
     min-height: 330px;
-
     padding: 35px;
-
     background: var(--rosa);
-
     border: 1px solid rgba(196, 54, 112, 0.12);
-
     transition:
         transform 0.4s ease,
         background 0.4s ease;
@@ -508,44 +402,33 @@ h2 span {
 
 .service-card:hover {
     transform: translateY(-10px);
-
     background: var(--rosa-claro);
 }
 
 .service-number {
     display: block;
-
     margin-bottom: 35px;
-
     color: var(--rosa-oscuro);
-
     font-family: Arial, sans-serif;
-
     font-size: 11px;
-
     letter-spacing: 2px;
 }
 
 .service-icon {
     margin-bottom: 20px;
-
     font-size: 38px;
 }
 
 .service-card h3 {
     margin-bottom: 15px;
-
     color: var(--rosa-oscuro);
-
     font-size: 32px;
 }
 
 .service-card p {
     font-size: 17px;
-
     line-height: 1.6;
 }
-
 
 /* =====================================================
    FLORES
@@ -557,47 +440,34 @@ h2 span {
 
 .flowers-grid {
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
-
     gap: 25px;
 }
 
 .flower-card {
     overflow: hidden;
-
     background: var(--crema);
-
     border-radius: 30px;
-
     transition:
         transform 0.4s ease,
         box-shadow 0.4s ease;
 }
 
 .flower-card:hover {
-    transform:
-        translateY(-12px)
-        rotate(-1deg);
-
-    box-shadow:
-        0 20px 50px rgba(90, 41, 66, 0.18);
+    transform: translateY(-12px) rotate(-1deg);
+    box-shadow: 0 20px 50px rgba(90, 41, 66, 0.18);
 }
 
 .flower-image {
     height: 430px;
-
     overflow: hidden;
 }
 
 .flower-image img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
-    transition:
-        transform 0.6s ease;
+    transition: transform 0.6s ease;
 }
 
 .flower-card:hover img {
@@ -610,44 +480,33 @@ h2 span {
 
 .flower-info > span {
     color: var(--rosa-oscuro);
-
     font-family: Arial, sans-serif;
-
     font-size: 10px;
-
     letter-spacing: 2px;
 }
 
 .flower-info h3 {
     margin: 8px 0;
-
     color: var(--rosa-oscuro);
-
     font-size: 42px;
 }
 
 .flower-price {
     margin-bottom: 20px;
-
     font-size: 26px;
-
     font-weight: bold;
 }
 
 .card-button {
     width: 100%;
-
     background: var(--rosa-oscuro);
-
     color: var(--crema);
 }
 
 .card-button:hover {
     background: var(--rosa);
-
     color: var(--texto);
 }
-
 
 /* =====================================================
    NOTA DE EMPAPELADO
@@ -655,31 +514,23 @@ h2 span {
 
 .price-note {
     max-width: 750px;
-
     margin: 50px auto 0;
-
     padding: 22px 28px;
-
     display: flex;
     align-items: center;
-
     gap: 18px;
-
     background: var(--crema);
-
     border-left: 5px solid var(--rosa-oscuro);
 }
 
 .price-note span {
     color: var(--rosa-oscuro);
-
     font-size: 25px;
 }
 
 .price-note p {
     line-height: 1.5;
 }
-
 
 /* =====================================================
    PERSONALIZADOS
@@ -691,15 +542,12 @@ h2 span {
 
 .personalized-intro {
     max-width: 750px;
-
     margin-bottom: 55px;
 }
 
 .personalized-intro p {
     margin-bottom: 20px;
-
     font-size: 23px;
-
     line-height: 1.6;
 }
 
@@ -708,6 +556,7 @@ h2 span {
     grid-template-columns: repeat(4, 1fr);
     gap: 15px;
 }
+
 .personalized-gallery img {
     width: 100%;
     aspect-ratio: 4 / 5;
@@ -715,31 +564,6 @@ h2 span {
     display: block;
     border-radius: 4px;
 }
-
-.themed-gallery,
-.clips-gallery {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-}
-
-.gallery-item {
-    width: 100%;
-    aspect-ratio: 4 / 5;
-    overflow: hidden;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-}
-
 
 /* =====================================================
    TEMATIZADOS
@@ -751,40 +575,61 @@ h2 span {
 
 .themed-content {
     display: grid;
-
     grid-template-columns: 0.8fr 1.2fr;
-
     gap: 60px;
-
     align-items: center;
 }
 
 .themed-text p {
     margin-bottom: 25px;
-
     font-size: 22px;
-
     line-height: 1.6;
 }
 
 .themed-text .big-text {
     color: var(--rosa-oscuro);
-
-    font-family: "DelRose", serif;
-
+    font-family: "DelRose", "Times New Roman", serif;
     font-size: 52px;
 }
 
 .highlight-text {
     padding-left: 25px;
-
     border-left: 3px solid var(--rosa-oscuro);
-
     color: var(--rosa-oscuro);
-
     font-style: italic;
 }
 
+.themed-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+/* =====================================================
+   GALERÍAS
+===================================================== */
+
+.gallery-item {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    border: none;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.06);
+}
 
 /* =====================================================
    BROCHES
@@ -796,34 +641,29 @@ h2 span {
 
 .clips-content {
     display: grid;
-
     grid-template-columns: 1.3fr 0.7fr;
-
     gap: 70px;
-
     align-items: center;
 }
 
 .clips-gallery {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
 }
 
 .clips-text .big-text {
     margin-bottom: 25px;
-
     color: var(--rosa-oscuro);
-
-    font-family: "DelRose", serif;
-
+    font-family: "DelRose", "Times New Roman", serif;
     font-size: 50px;
 }
 
-.clips-text p:last-child {
+.clips-text p {
+    margin-bottom: 25px;
     font-size: 21px;
-
     line-height: 1.7;
 }
-
 
 /* =====================================================
    COMBOS
@@ -835,23 +675,16 @@ h2 span {
 
 .combos-grid {
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
-
     gap: 18px;
 }
 
 .combo-card {
     position: relative;
-
     padding: 40px;
-
     overflow: hidden;
-
     background: var(--crema);
-
     border-radius: 25px;
-
     transition:
         transform 0.35s ease,
         background 0.35s ease;
@@ -859,65 +692,46 @@ h2 span {
 
 .combo-card:hover {
     transform: translateY(-8px);
-
     background: var(--rosa-claro);
 }
 
 .combo-card::before {
     content: "✦";
-
     position: absolute;
-
     top: 20px;
     right: 25px;
-
     color: var(--rosa);
-
     font-size: 35px;
 }
 
 .combo-card > span {
     color: var(--rosa-oscuro);
-
     font-family: Arial, sans-serif;
-
     font-size: 10px;
-
     font-weight: bold;
-
     letter-spacing: 3px;
 }
 
 .combo-card h3 {
     margin: 20px 0 10px;
-
     color: var(--texto);
-
     font-size: 36px;
 }
 
 .combo-price {
     color: var(--rosa-oscuro);
-
     font-size: 32px;
-
     font-weight: bold;
 }
 
 .saving {
     display: inline-block;
-
     margin-top: 12px;
-
     padding: 7px 12px;
-
     border-radius: 50px;
-
     background: var(--rosa);
-
     font-size: 14px;
 }
-
 
 /* =====================================================
    NUESTRO TRABAJO
@@ -929,37 +743,27 @@ h2 span {
 
 .work-gallery {
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
-
     gap: 15px;
 }
 
 .work-item {
     padding: 0;
-
     overflow: hidden;
-
     background: none;
-
     border: none;
-
     cursor: pointer;
 }
 
 .work-item img {
     aspect-ratio: 1 / 1;
-
     object-fit: cover;
-
-    transition:
-        transform 0.6s ease;
+    transition: transform 0.6s ease;
 }
 
 .work-item:hover img {
     transform: scale(1.08);
 }
-
 
 /* =====================================================
    FECHAS ESPECIALES
@@ -971,25 +775,17 @@ h2 span {
 
 .dates-grid {
     display: grid;
-
     grid-template-columns: repeat(4, 1fr);
-
     gap: 15px;
 }
 
 .date-card {
     min-height: 200px;
-
     padding: 30px;
-
     display: flex;
-
     flex-direction: column;
-
     justify-content: space-between;
-
     background: var(--crema);
-
     transition:
         transform 0.35s ease,
         background 0.35s ease;
@@ -997,26 +793,20 @@ h2 span {
 
 .date-card:hover {
     transform: translateY(-8px);
-
     background: var(--rosa);
 }
 
 .date-card span {
     color: var(--rosa-oscuro);
-
     font-family: Arial, sans-serif;
-
     font-size: 12px;
-
     letter-spacing: 2px;
 }
 
 .date-card h3 {
     color: var(--rosa-oscuro);
-
     font-size: 28px;
 }
-
 
 /* =====================================================
    PEDIDO
@@ -1024,13 +814,11 @@ h2 span {
 
 .order-section {
     background: var(--rosa);
-
     text-align: center;
 }
 
 .order-content {
     max-width: 800px;
-
     margin: auto;
 }
 
@@ -1044,16 +832,11 @@ h2 span {
 
 .order-content p:not(.section-number) {
     max-width: 600px;
-
     margin: 30px auto;
-
     color: var(--crema);
-
     font-size: 21px;
-
     line-height: 1.6;
 }
-
 
 /* =====================================================
    CONTACTO
@@ -1061,13 +844,11 @@ h2 span {
 
 .contact-section {
     background: var(--rosa-oscuro);
-
     text-align: center;
 }
 
 .contact-content {
     max-width: 850px;
-
     margin: auto;
 }
 
@@ -1081,40 +862,29 @@ h2 span {
 
 .contact-section > .contact-content > p:not(.section-number) {
     max-width: 650px;
-
     margin: 30px auto;
-
     color: var(--rosa-claro);
-
     font-size: 21px;
-
     line-height: 1.6;
 }
 
 .contact-links {
     display: flex;
-
     justify-content: center;
-
     gap: 15px;
-
     flex-wrap: wrap;
 }
 
 .contact-link {
     border: 1px solid var(--rosa-claro);
-
     color: var(--crema);
 }
 
 .contact-link:hover {
     background: var(--crema);
-
     color: var(--rosa-oscuro);
-
     transform: translateY(-4px);
 }
-
 
 /* =====================================================
    FOOTER
@@ -1122,21 +892,15 @@ h2 span {
 
 .footer {
     padding: 35px 8%;
-
     display: flex;
-
     justify-content: space-between;
-
     gap: 20px;
-
     background: var(--crema);
-
     color: var(--rosa-oscuro);
 }
 
 .footer p:first-child {
-    font-family: "DelRose", serif;
-
+    font-family: "DelRose", "Times New Roman", serif;
     font-size: 25px;
 }
 
@@ -1144,33 +908,22 @@ h2 span {
     font-size: 14px;
 }
 
-
 /* =====================================================
    LIGHTBOX
 ===================================================== */
 
 .lightbox {
     position: fixed;
-
     inset: 0;
-
     z-index: 1000;
-
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     padding: 30px;
-
     background: rgba(90, 41, 66, 0.92);
-
     backdrop-filter: blur(10px);
-
     opacity: 0;
-
     visibility: hidden;
-
     transition:
         opacity 0.3s ease,
         visibility 0.3s ease;
@@ -1178,42 +931,30 @@ h2 span {
 
 .lightbox.active {
     opacity: 1;
-
     visibility: visible;
 }
 
 .lightbox img {
     max-width: 90vw;
-
     max-height: 85vh;
-
     width: auto;
-
     border-radius: 20px;
-
     object-fit: contain;
 }
 
 .lightbox-close {
     position: absolute;
-
     top: 25px;
     right: 30px;
-
     width: 50px;
     height: 50px;
-
+    border: none;
     border-radius: 50%;
-
     background: var(--crema);
-
     color: var(--rosa-oscuro);
-
     font-size: 30px;
-
     cursor: pointer;
 }
-
 
 /* =====================================================
    ANIMACIONES DE SCROLL
@@ -1221,9 +962,7 @@ h2 span {
 
 .reveal {
     opacity: 0;
-
     transform: translateY(35px);
-
     transition:
         opacity 0.8s ease,
         transform 0.8s ease;
@@ -1231,10 +970,8 @@ h2 span {
 
 .reveal.visible {
     opacity: 1;
-
     transform: translateY(0);
 }
-
 
 /* =====================================================
    TABLET
@@ -1260,9 +997,7 @@ h2 span {
 
     .flowers-grid .flower-card:last-child {
         grid-column: 1 / -1;
-
         max-width: 500px;
-
         margin: auto;
     }
 
@@ -1275,7 +1010,6 @@ h2 span {
     }
 }
 
-
 /* =====================================================
    CELULAR
 ===================================================== */
@@ -1285,7 +1019,6 @@ h2 span {
     section {
         padding: 85px 6%;
     }
-
 
     /* NAV */
 
@@ -1302,26 +1035,16 @@ h2 span {
     }
 
     .nav-menu {
-
         position: absolute;
-
         top: 100%;
         left: 0;
-
         width: 100%;
-
         padding: 20px 25px;
-
         display: none;
-
         flex-direction: column;
-
         align-items: stretch;
-
         background: var(--crema);
-
-        border-bottom:
-            1px solid rgba(196, 54, 112, 0.15);
+        border-bottom: 1px solid rgba(196, 54, 112, 0.15);
     }
 
     .nav-menu.active {
@@ -1330,10 +1053,8 @@ h2 span {
 
     .nav-menu a {
         padding: 12px 0;
-
         font-size: 17px;
     }
-
 
     /* HERO */
 
@@ -1343,7 +1064,6 @@ h2 span {
 
     .hero h1 {
         font-size: clamp(55px, 16vw, 90px);
-
         letter-spacing: -1px;
     }
 
@@ -1353,12 +1073,9 @@ h2 span {
 
     .hero-decoration {
         right: -25px;
-
         bottom: 5%;
-
         font-size: 150px;
     }
-
 
     /* TITULOS */
 
@@ -1366,12 +1083,10 @@ h2 span {
         font-size: clamp(48px, 14vw, 72px);
     }
 
-
     /* NOSOTROS */
 
     .about-content {
         grid-template-columns: 1fr;
-
         gap: 40px;
     }
 
@@ -1379,13 +1094,11 @@ h2 span {
         font-size: 20px;
     }
 
-
     /* SERVICIOS */
 
     .services-grid {
         grid-template-columns: 1fr;
     }
-
 
     /* FLORES */
 
@@ -1395,7 +1108,6 @@ h2 span {
 
     .flowers-grid .flower-card:last-child {
         grid-column: auto;
-
         max-width: none;
     }
 
@@ -1403,32 +1115,50 @@ h2 span {
         height: 400px;
     }
 
+    /* GALERÍA PERSONALIZADA */
 
-    /* GALERÍAS */
-
-    .personalized-gallery,
-    .themed-gallery {
+    .personalized-gallery {
         grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
     }
 
+    /* GALERÍA TEMATIZADOS */
+
+    .themed-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
 
     /* TEMATIZADOS */
 
     .themed-content {
         grid-template-columns: 1fr;
+        gap: 40px;
     }
 
     .themed-text .big-text {
         font-size: 43px;
     }
 
-
     /* BROCHES */
 
     .clips-content {
         grid-template-columns: 1fr;
+        gap: 40px;
     }
 
+    .clips-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .clips-text .big-text {
+        font-size: 43px;
+    }
+
+    .clips-text p {
+        font-size: 19px;
+    }
 
     /* COMBOS */
 
@@ -1436,6 +1166,9 @@ h2 span {
         grid-template-columns: 1fr;
     }
 
+    .combo-card {
+        padding: 30px;
+    }
 
     /* TRABAJOS */
 
@@ -1443,13 +1176,11 @@ h2 span {
         grid-template-columns: repeat(2, 1fr);
     }
 
-
     /* FECHAS */
 
     .dates-grid {
         grid-template-columns: 1fr;
     }
-
 
     /* CONTACTO */
 
@@ -1461,24 +1192,19 @@ h2 span {
         width: 100%;
     }
 
-
     /* FOOTER */
 
     .footer {
         flex-direction: column;
-
         text-align: center;
     }
-
 
     /* FLORES */
 
     .flower-particle {
         font-size: 14px;
     }
-
 }
-
 
 /* =====================================================
    REDUCIR MOVIMIENTO
