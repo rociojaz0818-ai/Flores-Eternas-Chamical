@@ -1,16 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
-
-/* =====================================================
-   FUENTES
-===================================================== */
-
-/*
-   Brown Sugar:
-   Si tenés el archivo de la fuente descargado,
-   después podemos conectarlo acá con @font-face.
-
-   Por ahora usamos una serif elegante como respaldo.
-*/
+@font-face {
+    font-family: "DelRose";
+    src: url("DelRose-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
 
 
 /* =====================================================
@@ -18,16 +11,14 @@
 ===================================================== */
 
 :root {
-
     --rosa: #F283AF;
     --crema: #FBF4EB;
     --rosa-claro: #FBD9E5;
     --rosa-oscuro: #C43670;
     --durazno: #F3CC97;
 
-    --texto: #5b2440;
-    --blanco: #fffaf7;
-
+    --texto: #5A2942;
+    --blanco: #FFFDFC;
 }
 
 
@@ -48,7 +39,7 @@ html {
 body {
     background: var(--rosa);
     color: var(--texto);
-    font-family: "Times New Roman", serif;
+    font-family: "Times New Roman", Times, serif;
     overflow-x: hidden;
 }
 
@@ -57,18 +48,13 @@ img {
     width: 100%;
 }
 
-button,
-a {
-    font: inherit;
-}
-
-button {
-    border: none;
-}
-
 a {
     color: inherit;
     text-decoration: none;
+}
+
+button {
+    font: inherit;
 }
 
 
@@ -79,26 +65,27 @@ a {
 #flower-rain {
     position: fixed;
     inset: 0;
-    pointer-events: none;
     overflow: hidden;
+    pointer-events: none;
     z-index: 0;
 }
 
 .flower-particle {
     position: absolute;
-    top: -50px;
+    top: -60px;
 
     color: var(--rosa-claro);
 
-    font-size: 18px;
-
     opacity: 0.65;
+
+    font-size: 18px;
 
     animation-name: flowerFall;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 
-    text-shadow: 0 2px 8px rgba(196, 54, 112, 0.15);
+    text-shadow:
+        0 2px 8px rgba(196, 54, 112, 0.15);
 }
 
 @keyframes flowerFall {
@@ -111,7 +98,7 @@ a {
 
     25% {
         transform:
-            translate3d(20px, 25vh, 0)
+            translate3d(25px, 25vh, 0)
             rotate(90deg);
     }
 
@@ -123,7 +110,7 @@ a {
 
     75% {
         transform:
-            translate3d(25px, 75vh, 0)
+            translate3d(30px, 75vh, 0)
             rotate(270deg);
     }
 
@@ -132,7 +119,6 @@ a {
             translate3d(-10px, 110vh, 0)
             rotate(360deg);
     }
-
 }
 
 
@@ -158,71 +144,56 @@ section {
 ===================================================== */
 
 .navbar {
-
     position: sticky;
     top: 0;
 
     width: 100%;
 
-    padding: 22px 7%;
+    padding: 20px 7%;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    background: rgba(251, 244, 235, 0.92);
+    background: rgba(251, 244, 235, 0.94);
 
-    backdrop-filter: blur(14px);
+    backdrop-filter: blur(15px);
 
     border-bottom: 1px solid rgba(196, 54, 112, 0.12);
 
     z-index: 100;
-
 }
 
-
 .logo {
+    font-family: "DelRose", "Times New Roman", serif;
 
-    font-family: "DM Serif Display", Georgia, serif;
-
-    font-size: 27px;
+    font-size: 32px;
 
     color: var(--rosa-oscuro);
 
     transition: 0.3s ease;
-
 }
-
 
 .logo:hover {
     transform: translateY(-2px);
 }
 
-
 .nav-menu {
-
     display: flex;
     align-items: center;
-    gap: 26px;
-
+    gap: 25px;
 }
 
-
 .nav-menu a {
-
     position: relative;
 
     font-size: 15px;
 
-    color: var(--texto);
-
-    transition: color 0.3s ease;
-
+    transition:
+        color 0.3s ease;
 }
 
-
 .nav-menu a::after {
-
     content: "";
 
     position: absolute;
@@ -236,19 +207,15 @@ section {
     background: var(--rosa-oscuro);
 
     transition: width 0.3s ease;
-
 }
-
 
 .nav-menu a:hover {
     color: var(--rosa-oscuro);
 }
 
-
 .nav-menu a:hover::after {
     width: 100%;
 }
-
 
 .menu-toggle {
     display: none;
@@ -268,11 +235,10 @@ section {
 
 
 /* =====================================================
-   TEXTOS GENERALES
+   TEXTOS
 ===================================================== */
 
 .section-number {
-
     margin-bottom: 20px;
 
     color: var(--rosa-oscuro);
@@ -280,67 +246,49 @@ section {
     font-family: Arial, sans-serif;
 
     font-size: 11px;
-
     font-weight: bold;
 
     letter-spacing: 3px;
-
 }
-
 
 .section-header {
-
     max-width: 900px;
-
     margin-bottom: 60px;
-
 }
-
 
 h1,
 h2,
 h3 {
-
-    font-family: "DM Serif Display", Georgia, serif;
-
-    font-weight: 400;
-
+    font-family: "DelRose", "Times New Roman", serif;
+    font-weight: normal;
 }
 
+h1 {
+    color: var(--crema);
+}
 
 h2 {
-
-    font-size: clamp(45px, 6vw, 82px);
-
-    line-height: 0.95;
-
     color: var(--rosa-oscuro);
 
+    font-size: clamp(50px, 7vw, 90px);
+
+    line-height: 0.95;
 }
 
-
-h2 span,
-h1 span {
-
+h1 span,
+h2 span {
     display: block;
 
     color: var(--crema);
-
-    font-style: italic;
-
 }
 
-
 .section-description {
+    max-width: 600px;
 
     margin-top: 25px;
 
-    max-width: 550px;
-
-    font-size: 19px;
-
+    font-size: 20px;
     line-height: 1.7;
-
 }
 
 
@@ -350,16 +298,17 @@ h1 span {
 
 .main-button,
 .secondary-button,
-.card-button {
+.card-button,
+.contact-link {
 
     display: inline-flex;
 
     align-items: center;
     justify-content: center;
 
-    min-height: 50px;
+    min-height: 52px;
 
-    padding: 13px 25px;
+    padding: 14px 28px;
 
     border-radius: 100px;
 
@@ -368,46 +317,30 @@ h1 span {
         background 0.3s ease,
         color 0.3s ease,
         box-shadow 0.3s ease;
-
 }
-
 
 .main-button {
-
     background: var(--crema);
-
     color: var(--rosa-oscuro);
-
 }
 
-
 .main-button:hover {
-
     transform: translateY(-4px);
 
     box-shadow:
-        0 12px 25px rgba(91, 36, 64, 0.15);
-
+        0 15px 30px rgba(90, 41, 66, 0.16);
 }
-
 
 .secondary-button {
-
     border: 1px solid var(--crema);
-
     color: var(--crema);
-
 }
 
-
 .secondary-button:hover {
-
     background: var(--crema);
-
     color: var(--rosa-oscuro);
 
     transform: translateY(-4px);
-
 }
 
 
@@ -416,98 +349,74 @@ h1 span {
 ===================================================== */
 
 .hero {
-
-    min-height: 88vh;
+    min-height: 90vh;
 
     display: flex;
-
     align-items: center;
 
-    padding-top: 100px;
-    padding-bottom: 100px;
-
     overflow: hidden;
-
 }
-
 
 .hero-content {
-
-    max-width: 850px;
-
+    max-width: 900px;
 }
-
 
 .hero h1 {
+    font-size: clamp(65px, 10vw, 150px);
 
-    font-size: clamp(60px, 10vw, 145px);
+    line-height: 0.82;
 
-    line-height: 0.84;
-
-    color: var(--crema);
-
-    letter-spacing: -3px;
+    letter-spacing: -2px;
 
     margin-bottom: 40px;
-
 }
 
-
 .hero-text {
-
-    max-width: 600px;
+    max-width: 620px;
 
     margin-bottom: 35px;
 
     color: var(--crema);
 
-    font-size: 21px;
-
+    font-size: 22px;
     line-height: 1.6;
-
 }
-
 
 .hero-buttons {
-
     display: flex;
-
     gap: 15px;
-
     flex-wrap: wrap;
-
 }
 
-
 .hero-decoration {
-
     position: absolute;
 
-    right: 8%;
-    bottom: 10%;
+    right: 7%;
+    bottom: 8%;
 
-    font-size: clamp(100px, 20vw, 280px);
+    color: rgba(251, 244, 235, 0.18);
 
-    color: rgba(251, 244, 235, 0.2);
-
-    animation: floatingFlower 5s ease-in-out infinite;
+    font-size: clamp(130px, 20vw, 300px);
 
     pointer-events: none;
 
+    animation: floatingFlower 5s ease-in-out infinite;
 }
-
 
 @keyframes floatingFlower {
 
     0%,
     100% {
-        transform: rotate(-8deg) translateY(0);
+        transform:
+            rotate(-8deg)
+            translateY(0);
     }
 
     50% {
-        transform: rotate(8deg) translateY(-18px);
+        transform:
+            rotate(8deg)
+            translateY(-18px);
     }
-
 }
 
 
@@ -516,16 +425,12 @@ h1 span {
 ===================================================== */
 
 .about-section {
-
     background: var(--crema);
 
     border-radius: 60px 60px 0 0;
-
 }
 
-
 .about-content {
-
     display: grid;
 
     grid-template-columns: 1.4fr 0.6fr;
@@ -533,36 +438,28 @@ h1 span {
     gap: 80px;
 
     align-items: center;
-
 }
 
-
 .about-text p {
-
     margin-bottom: 25px;
 
     font-size: 23px;
 
     line-height: 1.65;
-
 }
 
-
 .about-phrase {
-
-    padding: 45px;
+    padding: 50px 40px;
 
     background: var(--rosa-claro);
 
-    border-radius: 50% 50% 45% 45%;
+    border-radius:
+        48% 52% 50% 45%;
 
     text-align: center;
-
 }
 
-
 .about-phrase span {
-
     display: block;
 
     margin-bottom: 15px;
@@ -570,16 +467,12 @@ h1 span {
     color: var(--rosa-oscuro);
 
     font-size: 45px;
-
 }
 
-
 .about-phrase p {
-
     font-size: 22px;
 
     line-height: 1.4;
-
 }
 
 
@@ -588,92 +481,69 @@ h1 span {
 ===================================================== */
 
 .services-section {
-
     background: var(--crema);
-
 }
 
-
 .services-grid {
-
     display: grid;
 
     grid-template-columns: repeat(4, 1fr);
 
     gap: 18px;
-
 }
 
-
 .service-card {
-
     min-height: 330px;
 
     padding: 35px;
 
     background: var(--rosa);
 
-    border: 1px solid rgba(196, 54, 112, 0.1);
+    border: 1px solid rgba(196, 54, 112, 0.12);
 
     transition:
         transform 0.4s ease,
         background 0.4s ease;
-
 }
 
-
 .service-card:hover {
-
     transform: translateY(-10px);
 
     background: var(--rosa-claro);
-
 }
 
-
 .service-number {
-
     display: block;
 
-    margin-bottom: 40px;
+    margin-bottom: 35px;
 
     color: var(--rosa-oscuro);
 
     font-family: Arial, sans-serif;
 
-    font-size: 12px;
+    font-size: 11px;
 
     letter-spacing: 2px;
-
 }
-
 
 .service-icon {
-
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 
     font-size: 38px;
-
 }
 
-
 .service-card h3 {
-
     margin-bottom: 15px;
 
     color: var(--rosa-oscuro);
 
-    font-size: 30px;
-
+    font-size: 32px;
 }
 
-
 .service-card p {
-
-    line-height: 1.6;
-
     font-size: 17px;
 
+    line-height: 1.6;
 }
 
 
@@ -682,25 +552,18 @@ h1 span {
 ===================================================== */
 
 .flowers-section {
-
     background: var(--rosa);
-
 }
 
-
 .flowers-grid {
-
     display: grid;
 
     grid-template-columns: repeat(3, 1fr);
 
     gap: 25px;
-
 }
 
-
 .flower-card {
-
     overflow: hidden;
 
     background: var(--crema);
@@ -710,148 +573,111 @@ h1 span {
     transition:
         transform 0.4s ease,
         box-shadow 0.4s ease;
-
 }
-
 
 .flower-card:hover {
-
-    transform: translateY(-12px) rotate(-1deg);
+    transform:
+        translateY(-12px)
+        rotate(-1deg);
 
     box-shadow:
-        0 20px 50px rgba(91, 36, 64, 0.18);
-
+        0 20px 50px rgba(90, 41, 66, 0.18);
 }
 
-
 .flower-image {
-
     height: 430px;
 
     overflow: hidden;
-
 }
 
-
 .flower-image img {
-
     width: 100%;
     height: 100%;
 
     object-fit: cover;
 
-    transition: transform 0.6s ease;
-
+    transition:
+        transform 0.6s ease;
 }
-
 
 .flower-card:hover img {
-
     transform: scale(1.06);
-
 }
-
 
 .flower-info {
-
     padding: 30px;
-
 }
 
-
 .flower-info > span {
+    color: var(--rosa-oscuro);
 
     font-family: Arial, sans-serif;
 
     font-size: 10px;
 
     letter-spacing: 2px;
-
-    color: var(--rosa-oscuro);
-
 }
 
-
 .flower-info h3 {
-
     margin: 8px 0;
 
     color: var(--rosa-oscuro);
 
-    font-size: 40px;
-
+    font-size: 42px;
 }
-
 
 .flower-price {
-
     margin-bottom: 20px;
 
-    font-size: 25px;
+    font-size: 26px;
 
     font-weight: bold;
-
 }
 
-
 .card-button {
-
     width: 100%;
 
     background: var(--rosa-oscuro);
 
     color: var(--crema);
-
 }
 
-
 .card-button:hover {
-
     background: var(--rosa);
 
     color: var(--texto);
-
 }
 
 
 /* =====================================================
-   NOTA DE PRECIO
+   NOTA DE EMPAPELADO
 ===================================================== */
 
 .price-note {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 20px;
-
-    max-width: 700px;
+    max-width: 750px;
 
     margin: 50px auto 0;
 
-    padding: 20px 25px;
+    padding: 22px 28px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
 
     background: var(--crema);
 
     border-left: 5px solid var(--rosa-oscuro);
-
 }
 
-
 .price-note span {
-
     color: var(--rosa-oscuro);
 
     font-size: 25px;
-
 }
 
-
 .price-note p {
-
     line-height: 1.5;
-
 }
 
 
@@ -860,47 +686,34 @@ h1 span {
 ===================================================== */
 
 .personalized-section {
-
     background: var(--crema);
-
 }
-
 
 .personalized-intro {
-
-    max-width: 700px;
+    max-width: 750px;
 
     margin-bottom: 55px;
-
 }
 
-
 .personalized-intro p {
-
     margin-bottom: 20px;
 
     font-size: 23px;
 
     line-height: 1.6;
-
 }
-
 
 .personalized-gallery,
 .themed-gallery,
 .clips-gallery {
-
     display: grid;
 
     grid-template-columns: repeat(4, 1fr);
 
     gap: 15px;
-
 }
 
-
 .gallery-item {
-
     position: relative;
 
     padding: 0;
@@ -909,24 +722,36 @@ h1 span {
 
     background: none;
 
-    cursor: pointer;
+    border: none;
 
+    cursor: pointer;
 }
 
+.gallery-item img {
+    aspect-ratio: 1 / 1.2;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.6s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.07);
+}
 
 .gallery-item::after {
-
     content: "＋";
 
     position: absolute;
 
-    inset: auto 15px 15px auto;
+    right: 15px;
+    bottom: 15px;
 
     width: 38px;
     height: 38px;
 
     display: grid;
-
     place-items: center;
 
     border-radius: 50%;
@@ -940,34 +765,12 @@ h1 span {
     transform: scale(0.7);
 
     transition: 0.3s ease;
-
 }
 
-
 .gallery-item:hover::after {
-
     opacity: 1;
 
     transform: scale(1);
-
-}
-
-
-.gallery-item img {
-
-    aspect-ratio: 1 / 1.2;
-
-    object-fit: cover;
-
-    transition: transform 0.6s ease;
-
-}
-
-
-.gallery-item:hover img {
-
-    transform: scale(1.07);
-
 }
 
 
@@ -976,14 +779,10 @@ h1 span {
 ===================================================== */
 
 .themed-section {
-
     background: var(--rosa-claro);
-
 }
 
-
 .themed-content {
-
     display: grid;
 
     grid-template-columns: 0.8fr 1.2fr;
@@ -991,34 +790,25 @@ h1 span {
     gap: 60px;
 
     align-items: center;
-
 }
 
-
 .themed-text p {
-
     margin-bottom: 25px;
 
     font-size: 22px;
 
     line-height: 1.6;
-
 }
-
 
 .themed-text .big-text {
-
     color: var(--rosa-oscuro);
 
-    font-family: "DM Serif Display", Georgia, serif;
+    font-family: "DelRose", serif;
 
-    font-size: 50px;
-
+    font-size: 52px;
 }
 
-
 .highlight-text {
-
     padding-left: 25px;
 
     border-left: 3px solid var(--rosa-oscuro);
@@ -1026,7 +816,6 @@ h1 span {
     color: var(--rosa-oscuro);
 
     font-style: italic;
-
 }
 
 
@@ -1035,14 +824,10 @@ h1 span {
 ===================================================== */
 
 .clips-section {
-
     background: var(--crema);
-
 }
 
-
 .clips-content {
-
     display: grid;
 
     grid-template-columns: 1.3fr 0.7fr;
@@ -1050,36 +835,26 @@ h1 span {
     gap: 70px;
 
     align-items: center;
-
 }
-
 
 .clips-gallery {
-
     grid-template-columns: repeat(2, 1fr);
-
 }
 
-
 .clips-text .big-text {
-
     margin-bottom: 25px;
 
     color: var(--rosa-oscuro);
 
-    font-family: "DM Serif Display", Georgia, serif;
+    font-family: "DelRose", serif;
 
-    font-size: 48px;
-
+    font-size: 50px;
 }
 
-
 .clips-text p:last-child {
-
     font-size: 21px;
 
     line-height: 1.7;
-
 }
 
 
@@ -1088,68 +863,54 @@ h1 span {
 ===================================================== */
 
 .combos-section {
-
     background: var(--rosa);
-
 }
 
-
 .combos-grid {
-
     display: grid;
 
     grid-template-columns: repeat(3, 1fr);
 
     gap: 18px;
-
 }
 
-
 .combo-card {
-
     position: relative;
 
     padding: 40px;
+
+    overflow: hidden;
 
     background: var(--crema);
 
     border-radius: 25px;
 
-    overflow: hidden;
-
     transition:
         transform 0.35s ease,
         background 0.35s ease;
-
 }
 
+.combo-card:hover {
+    transform: translateY(-8px);
+
+    background: var(--rosa-claro);
+}
 
 .combo-card::before {
-
     content: "✦";
 
     position: absolute;
 
-    right: 25px;
     top: 20px;
+    right: 25px;
 
     color: var(--rosa);
 
     font-size: 35px;
-
 }
-
-
-.combo-card:hover {
-
-    transform: translateY(-8px);
-
-    background: var(--rosa-claro);
-
-}
-
 
 .combo-card > span {
+    color: var(--rosa-oscuro);
 
     font-family: Arial, sans-serif;
 
@@ -1158,36 +919,25 @@ h1 span {
     font-weight: bold;
 
     letter-spacing: 3px;
-
-    color: var(--rosa-oscuro);
-
 }
 
-
 .combo-card h3 {
-
     margin: 20px 0 10px;
-
-    font-size: 35px;
 
     color: var(--texto);
 
+    font-size: 36px;
 }
 
-
 .combo-price {
-
     color: var(--rosa-oscuro);
 
     font-size: 32px;
 
     font-weight: bold;
-
 }
 
-
 .saving {
-
     display: inline-block;
 
     margin-top: 12px;
@@ -1198,10 +948,7 @@ h1 span {
 
     background: var(--rosa);
 
-    color: var(--texto);
-
     font-size: 14px;
-
 }
 
 
@@ -1210,78 +957,60 @@ h1 span {
 ===================================================== */
 
 .work-section {
-
     background: var(--crema);
-
 }
 
-
 .work-gallery {
-
     display: grid;
 
     grid-template-columns: repeat(3, 1fr);
 
     gap: 15px;
-
 }
 
-
 .work-item {
-
     padding: 0;
 
     overflow: hidden;
 
     background: none;
 
-    cursor: pointer;
+    border: none;
 
+    cursor: pointer;
 }
 
-
 .work-item img {
-
     aspect-ratio: 1 / 1;
 
     object-fit: cover;
 
-    transition: transform 0.6s ease;
-
+    transition:
+        transform 0.6s ease;
 }
 
-
 .work-item:hover img {
-
     transform: scale(1.08);
-
 }
 
 
 /* =====================================================
-   FECHAS
+   FECHAS ESPECIALES
 ===================================================== */
 
 .dates-section {
-
     background: var(--rosa-claro);
-
 }
 
-
 .dates-grid {
-
     display: grid;
 
     grid-template-columns: repeat(4, 1fr);
 
     gap: 15px;
-
 }
 
-
 .date-card {
-
     min-height: 200px;
 
     padding: 30px;
@@ -1297,21 +1026,15 @@ h1 span {
     transition:
         transform 0.35s ease,
         background 0.35s ease;
-
 }
 
-
 .date-card:hover {
-
     transform: translateY(-8px);
 
     background: var(--rosa);
-
 }
 
-
 .date-card span {
-
     color: var(--rosa-oscuro);
 
     font-family: Arial, sans-serif;
@@ -1319,16 +1042,12 @@ h1 span {
     font-size: 12px;
 
     letter-spacing: 2px;
-
 }
 
-
 .date-card h3 {
-
     color: var(--rosa-oscuro);
 
-    font-size: 27px;
-
+    font-size: 28px;
 }
 
 
@@ -1337,39 +1056,26 @@ h1 span {
 ===================================================== */
 
 .order-section {
-
     background: var(--rosa);
 
     text-align: center;
-
 }
 
-
 .order-content {
-
     max-width: 800px;
 
     margin: auto;
-
 }
-
 
 .order-content .section-number {
-
     color: var(--crema);
-
 }
-
 
 .order-content h2 {
-
     color: var(--crema);
-
 }
 
-
 .order-content p:not(.section-number) {
-
     max-width: 600px;
 
     margin: 30px auto;
@@ -1379,7 +1085,6 @@ h1 span {
     font-size: 21px;
 
     line-height: 1.6;
-
 }
 
 
@@ -1388,38 +1093,27 @@ h1 span {
 ===================================================== */
 
 .contact-section {
-
     background: var(--rosa-oscuro);
 
     text-align: center;
-
 }
-
 
 .contact-content {
-
-    max-width: 800px;
+    max-width: 850px;
 
     margin: auto;
-
 }
-
 
 .contact-section .section-number {
-
     color: var(--rosa-claro);
-
 }
-
 
 .contact-section h2 {
-
     color: var(--crema);
-
 }
 
-
 .contact-section > .contact-content > p:not(.section-number) {
+    max-width: 650px;
 
     margin: 30px auto;
 
@@ -1428,12 +1122,9 @@ h1 span {
     font-size: 21px;
 
     line-height: 1.6;
-
 }
 
-
 .contact-links {
-
     display: flex;
 
     justify-content: center;
@@ -1441,36 +1132,20 @@ h1 span {
     gap: 15px;
 
     flex-wrap: wrap;
-
 }
-
 
 .contact-link {
-
-    padding: 17px 30px;
-
     border: 1px solid var(--rosa-claro);
 
-    border-radius: 100px;
-
     color: var(--crema);
-
-    transition:
-        background 0.3s ease,
-        color 0.3s ease,
-        transform 0.3s ease;
-
 }
 
-
 .contact-link:hover {
-
     background: var(--crema);
 
     color: var(--rosa-oscuro);
 
     transform: translateY(-4px);
-
 }
 
 
@@ -1479,7 +1154,6 @@ h1 span {
 ===================================================== */
 
 .footer {
-
     padding: 35px 8%;
 
     display: flex;
@@ -1491,23 +1165,16 @@ h1 span {
     background: var(--crema);
 
     color: var(--rosa-oscuro);
-
 }
-
 
 .footer p:first-child {
+    font-family: "DelRose", serif;
 
-    font-family: "DM Serif Display", Georgia, serif;
-
-    font-size: 22px;
-
+    font-size: 25px;
 }
 
-
 .footer p:last-child {
-
     font-size: 14px;
-
 }
 
 
@@ -1516,7 +1183,6 @@ h1 span {
 ===================================================== */
 
 .lightbox {
-
     position: fixed;
 
     inset: 0;
@@ -1530,7 +1196,7 @@ h1 span {
 
     padding: 30px;
 
-    background: rgba(91, 36, 64, 0.9);
+    background: rgba(90, 41, 66, 0.92);
 
     backdrop-filter: blur(10px);
 
@@ -1541,22 +1207,16 @@ h1 span {
     transition:
         opacity 0.3s ease,
         visibility 0.3s ease;
-
 }
 
-
 .lightbox.active {
-
     opacity: 1;
 
     visibility: visible;
-
 }
 
-
 .lightbox img {
-
-    max-width: min(900px, 90vw);
+    max-width: 90vw;
 
     max-height: 85vh;
 
@@ -1565,12 +1225,9 @@ h1 span {
     border-radius: 20px;
 
     object-fit: contain;
-
 }
 
-
 .lightbox-close {
-
     position: absolute;
 
     top: 25px;
@@ -1588,16 +1245,14 @@ h1 span {
     font-size: 30px;
 
     cursor: pointer;
-
 }
 
 
 /* =====================================================
-   ANIMACIONES DE ENTRADA
+   ANIMACIONES DE SCROLL
 ===================================================== */
 
 .reveal {
-
     opacity: 0;
 
     transform: translateY(35px);
@@ -1605,21 +1260,17 @@ h1 span {
     transition:
         opacity 0.8s ease,
         transform 0.8s ease;
-
 }
 
-
 .reveal.visible {
-
     opacity: 1;
 
     transform: translateY(0);
-
 }
 
 
 /* =====================================================
-   RESPONSIVE — TABLET
+   TABLET
 ===================================================== */
 
 @media (max-width: 1050px) {
@@ -1642,8 +1293,9 @@ h1 span {
 
     .flowers-grid .flower-card:last-child {
         grid-column: 1 / -1;
+
         max-width: 500px;
-        width: 100%;
+
         margin: auto;
     }
 
@@ -1654,12 +1306,11 @@ h1 span {
     .dates-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-
 }
 
 
 /* =====================================================
-   RESPONSIVE — CELULAR
+   CELULAR
 ===================================================== */
 
 @media (max-width: 750px) {
@@ -1676,7 +1327,7 @@ h1 span {
     }
 
     .logo {
-        font-size: 24px;
+        font-size: 27px;
     }
 
     .menu-toggle {
@@ -1692,7 +1343,7 @@ h1 span {
 
         width: 100%;
 
-        padding: 25px;
+        padding: 20px 25px;
 
         display: none;
 
@@ -1702,8 +1353,8 @@ h1 span {
 
         background: var(--crema);
 
-        border-bottom: 1px solid rgba(196, 54, 112, 0.15);
-
+        border-bottom:
+            1px solid rgba(196, 54, 112, 0.15);
     }
 
     .nav-menu.active {
@@ -1712,6 +1363,7 @@ h1 span {
 
     .nav-menu a {
         padding: 12px 0;
+
         font-size: 17px;
     }
 
@@ -1719,15 +1371,13 @@ h1 span {
     /* HERO */
 
     .hero {
-        min-height: 80vh;
+        min-height: 82vh;
     }
 
     .hero h1 {
+        font-size: clamp(55px, 16vw, 90px);
 
-        font-size: clamp(55px, 16vw, 85px);
-
-        letter-spacing: -2px;
-
+        letter-spacing: -1px;
     }
 
     .hero-text {
@@ -1735,8 +1385,10 @@ h1 span {
     }
 
     .hero-decoration {
-        right: -20px;
+        right: -25px;
+
         bottom: 5%;
+
         font-size: 150px;
     }
 
@@ -1744,7 +1396,7 @@ h1 span {
     /* TITULOS */
 
     h2 {
-        font-size: clamp(48px, 14vw, 70px);
+        font-size: clamp(48px, 14vw, 72px);
     }
 
 
@@ -1752,6 +1404,7 @@ h1 span {
 
     .about-content {
         grid-template-columns: 1fr;
+
         gap: 40px;
     }
 
@@ -1775,6 +1428,7 @@ h1 span {
 
     .flowers-grid .flower-card:last-child {
         grid-column: auto;
+
         max-width: none;
     }
 
@@ -1798,7 +1452,7 @@ h1 span {
     }
 
     .themed-text .big-text {
-        font-size: 42px;
+        font-size: 43px;
     }
 
 
@@ -1845,11 +1499,12 @@ h1 span {
 
     .footer {
         flex-direction: column;
+
         text-align: center;
     }
 
 
-    /* LLUVIA */
+    /* FLORES */
 
     .flower-particle {
         font-size: 14px;
@@ -1875,5 +1530,4 @@ h1 span {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
-
 }
