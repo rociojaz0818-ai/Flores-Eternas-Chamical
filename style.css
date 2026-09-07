@@ -1224,3 +1224,46 @@ h2 span {
         transition-duration: 0.01ms !important;
     }
 }
+/* =====================================
+   🌸 LLUVIA DE FLORES
+===================================== */
+
+.flower-rain {
+    position: fixed;
+    top: -50px;
+    z-index: 9999;
+    pointer-events: none;
+    user-select: none;
+    animation-name: flowerFall;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes flowerFall {
+    0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.9;
+    }
+
+    90% {
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* En celulares, un poquito más sutil */
+@media (max-width: 600px) {
+
+    .flower-rain {
+        font-size: 16px !important;
+    }
+
+}
