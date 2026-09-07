@@ -1,0 +1,1879 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+
+/* =====================================================
+   FUENTES
+===================================================== */
+
+/*
+   Brown Sugar:
+   Si tenés el archivo de la fuente descargado,
+   después podemos conectarlo acá con @font-face.
+
+   Por ahora usamos una serif elegante como respaldo.
+*/
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root {
+
+    --rosa: #F283AF;
+    --crema: #FBF4EB;
+    --rosa-claro: #FBD9E5;
+    --rosa-oscuro: #C43670;
+    --durazno: #F3CC97;
+
+    --texto: #5b2440;
+    --blanco: #fffaf7;
+
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--rosa);
+    color: var(--texto);
+    font-family: "Times New Roman", serif;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+button,
+a {
+    font: inherit;
+}
+
+button {
+    border: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =====================================================
+   LLUVIA DE FLORES
+===================================================== */
+
+#flower-rain {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.flower-particle {
+    position: absolute;
+    top: -50px;
+
+    color: var(--rosa-claro);
+
+    font-size: 18px;
+
+    opacity: 0.65;
+
+    animation-name: flowerFall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    text-shadow: 0 2px 8px rgba(196, 54, 112, 0.15);
+}
+
+@keyframes flowerFall {
+
+    0% {
+        transform:
+            translate3d(0, -60px, 0)
+            rotate(0deg);
+    }
+
+    25% {
+        transform:
+            translate3d(20px, 25vh, 0)
+            rotate(90deg);
+    }
+
+    50% {
+        transform:
+            translate3d(-20px, 50vh, 0)
+            rotate(180deg);
+    }
+
+    75% {
+        transform:
+            translate3d(25px, 75vh, 0)
+            rotate(270deg);
+    }
+
+    100% {
+        transform:
+            translate3d(-10px, 110vh, 0)
+            rotate(360deg);
+    }
+
+}
+
+
+/* =====================================================
+   ESTRUCTURA
+===================================================== */
+
+main,
+.navbar,
+.footer {
+    position: relative;
+    z-index: 1;
+}
+
+section {
+    position: relative;
+    padding: 120px 8%;
+}
+
+
+/* =====================================================
+   NAVEGACIÓN
+===================================================== */
+
+.navbar {
+
+    position: sticky;
+    top: 0;
+
+    width: 100%;
+
+    padding: 22px 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(251, 244, 235, 0.92);
+
+    backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid rgba(196, 54, 112, 0.12);
+
+    z-index: 100;
+
+}
+
+
+.logo {
+
+    font-family: "DM Serif Display", Georgia, serif;
+
+    font-size: 27px;
+
+    color: var(--rosa-oscuro);
+
+    transition: 0.3s ease;
+
+}
+
+
+.logo:hover {
+    transform: translateY(-2px);
+}
+
+
+.nav-menu {
+
+    display: flex;
+    align-items: center;
+    gap: 26px;
+
+}
+
+
+.nav-menu a {
+
+    position: relative;
+
+    font-size: 15px;
+
+    color: var(--texto);
+
+    transition: color 0.3s ease;
+
+}
+
+
+.nav-menu a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -6px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--rosa-oscuro);
+
+    transition: width 0.3s ease;
+
+}
+
+
+.nav-menu a:hover {
+    color: var(--rosa-oscuro);
+}
+
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+
+.menu-toggle {
+    display: none;
+
+    width: 46px;
+    height: 46px;
+
+    border-radius: 50%;
+
+    background: var(--rosa-oscuro);
+    color: var(--crema);
+
+    cursor: pointer;
+
+    font-size: 22px;
+}
+
+
+/* =====================================================
+   TEXTOS GENERALES
+===================================================== */
+
+.section-number {
+
+    margin-bottom: 20px;
+
+    color: var(--rosa-oscuro);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+}
+
+
+.section-header {
+
+    max-width: 900px;
+
+    margin-bottom: 60px;
+
+}
+
+
+h1,
+h2,
+h3 {
+
+    font-family: "DM Serif Display", Georgia, serif;
+
+    font-weight: 400;
+
+}
+
+
+h2 {
+
+    font-size: clamp(45px, 6vw, 82px);
+
+    line-height: 0.95;
+
+    color: var(--rosa-oscuro);
+
+}
+
+
+h2 span,
+h1 span {
+
+    display: block;
+
+    color: var(--crema);
+
+    font-style: italic;
+
+}
+
+
+.section-description {
+
+    margin-top: 25px;
+
+    max-width: 550px;
+
+    font-size: 19px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =====================================================
+   BOTONES
+===================================================== */
+
+.main-button,
+.secondary-button,
+.card-button {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 50px;
+
+    padding: 13px 25px;
+
+    border-radius: 100px;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+.main-button {
+
+    background: var(--crema);
+
+    color: var(--rosa-oscuro);
+
+}
+
+
+.main-button:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 25px rgba(91, 36, 64, 0.15);
+
+}
+
+
+.secondary-button {
+
+    border: 1px solid var(--crema);
+
+    color: var(--crema);
+
+}
+
+
+.secondary-button:hover {
+
+    background: var(--crema);
+
+    color: var(--rosa-oscuro);
+
+    transform: translateY(-4px);
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+
+    min-height: 88vh;
+
+    display: flex;
+
+    align-items: center;
+
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    overflow: hidden;
+
+}
+
+
+.hero-content {
+
+    max-width: 850px;
+
+}
+
+
+.hero h1 {
+
+    font-size: clamp(60px, 10vw, 145px);
+
+    line-height: 0.84;
+
+    color: var(--crema);
+
+    letter-spacing: -3px;
+
+    margin-bottom: 40px;
+
+}
+
+
+.hero-text {
+
+    max-width: 600px;
+
+    margin-bottom: 35px;
+
+    color: var(--crema);
+
+    font-size: 21px;
+
+    line-height: 1.6;
+
+}
+
+
+.hero-buttons {
+
+    display: flex;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.hero-decoration {
+
+    position: absolute;
+
+    right: 8%;
+    bottom: 10%;
+
+    font-size: clamp(100px, 20vw, 280px);
+
+    color: rgba(251, 244, 235, 0.2);
+
+    animation: floatingFlower 5s ease-in-out infinite;
+
+    pointer-events: none;
+
+}
+
+
+@keyframes floatingFlower {
+
+    0%,
+    100% {
+        transform: rotate(-8deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(8deg) translateY(-18px);
+    }
+
+}
+
+
+/* =====================================================
+   NOSOTROS
+===================================================== */
+
+.about-section {
+
+    background: var(--crema);
+
+    border-radius: 60px 60px 0 0;
+
+}
+
+
+.about-content {
+
+    display: grid;
+
+    grid-template-columns: 1.4fr 0.6fr;
+
+    gap: 80px;
+
+    align-items: center;
+
+}
+
+
+.about-text p {
+
+    margin-bottom: 25px;
+
+    font-size: 23px;
+
+    line-height: 1.65;
+
+}
+
+
+.about-phrase {
+
+    padding: 45px;
+
+    background: var(--rosa-claro);
+
+    border-radius: 50% 50% 45% 45%;
+
+    text-align: center;
+
+}
+
+
+.about-phrase span {
+
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: var(--rosa-oscuro);
+
+    font-size: 45px;
+
+}
+
+
+.about-phrase p {
+
+    font-size: 22px;
+
+    line-height: 1.4;
+
+}
+
+
+/* =====================================================
+   SERVICIOS
+===================================================== */
+
+.services-section {
+
+    background: var(--crema);
+
+}
+
+
+.services-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+
+}
+
+
+.service-card {
+
+    min-height: 330px;
+
+    padding: 35px;
+
+    background: var(--rosa);
+
+    border: 1px solid rgba(196, 54, 112, 0.1);
+
+    transition:
+        transform 0.4s ease,
+        background 0.4s ease;
+
+}
+
+
+.service-card:hover {
+
+    transform: translateY(-10px);
+
+    background: var(--rosa-claro);
+
+}
+
+
+.service-number {
+
+    display: block;
+
+    margin-bottom: 40px;
+
+    color: var(--rosa-oscuro);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.service-icon {
+
+    margin-bottom: 25px;
+
+    font-size: 38px;
+
+}
+
+
+.service-card h3 {
+
+    margin-bottom: 15px;
+
+    color: var(--rosa-oscuro);
+
+    font-size: 30px;
+
+}
+
+
+.service-card p {
+
+    line-height: 1.6;
+
+    font-size: 17px;
+
+}
+
+
+/* =====================================================
+   FLORES
+===================================================== */
+
+.flowers-section {
+
+    background: var(--rosa);
+
+}
+
+
+.flowers-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+}
+
+
+.flower-card {
+
+    overflow: hidden;
+
+    background: var(--crema);
+
+    border-radius: 30px;
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+
+}
+
+
+.flower-card:hover {
+
+    transform: translateY(-12px) rotate(-1deg);
+
+    box-shadow:
+        0 20px 50px rgba(91, 36, 64, 0.18);
+
+}
+
+
+.flower-image {
+
+    height: 430px;
+
+    overflow: hidden;
+
+}
+
+
+.flower-image img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+
+}
+
+
+.flower-card:hover img {
+
+    transform: scale(1.06);
+
+}
+
+
+.flower-info {
+
+    padding: 30px;
+
+}
+
+
+.flower-info > span {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    color: var(--rosa-oscuro);
+
+}
+
+
+.flower-info h3 {
+
+    margin: 8px 0;
+
+    color: var(--rosa-oscuro);
+
+    font-size: 40px;
+
+}
+
+
+.flower-price {
+
+    margin-bottom: 20px;
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+}
+
+
+.card-button {
+
+    width: 100%;
+
+    background: var(--rosa-oscuro);
+
+    color: var(--crema);
+
+}
+
+
+.card-button:hover {
+
+    background: var(--rosa);
+
+    color: var(--texto);
+
+}
+
+
+/* =====================================================
+   NOTA DE PRECIO
+===================================================== */
+
+.price-note {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    max-width: 700px;
+
+    margin: 50px auto 0;
+
+    padding: 20px 25px;
+
+    background: var(--crema);
+
+    border-left: 5px solid var(--rosa-oscuro);
+
+}
+
+
+.price-note span {
+
+    color: var(--rosa-oscuro);
+
+    font-size: 25px;
+
+}
+
+
+.price-note p {
+
+    line-height: 1.5;
+
+}
+
+
+/* =====================================================
+   PERSONALIZADOS
+===================================================== */
+
+.personalized-section {
+
+    background: var(--crema);
+
+}
+
+
+.personalized-intro {
+
+    max-width: 700px;
+
+    margin-bottom: 55px;
+
+}
+
+
+.personalized-intro p {
+
+    margin-bottom: 20px;
+
+    font-size: 23px;
+
+    line-height: 1.6;
+
+}
+
+
+.personalized-gallery,
+.themed-gallery,
+.clips-gallery {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+
+}
+
+
+.gallery-item {
+
+    position: relative;
+
+    padding: 0;
+
+    overflow: hidden;
+
+    background: none;
+
+    cursor: pointer;
+
+}
+
+
+.gallery-item::after {
+
+    content: "＋";
+
+    position: absolute;
+
+    inset: auto 15px 15px auto;
+
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: var(--crema);
+
+    color: var(--rosa-oscuro);
+
+    opacity: 0;
+
+    transform: scale(0.7);
+
+    transition: 0.3s ease;
+
+}
+
+
+.gallery-item:hover::after {
+
+    opacity: 1;
+
+    transform: scale(1);
+
+}
+
+
+.gallery-item img {
+
+    aspect-ratio: 1 / 1.2;
+
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+
+}
+
+
+.gallery-item:hover img {
+
+    transform: scale(1.07);
+
+}
+
+
+/* =====================================================
+   TEMATIZADOS
+===================================================== */
+
+.themed-section {
+
+    background: var(--rosa-claro);
+
+}
+
+
+.themed-content {
+
+    display: grid;
+
+    grid-template-columns: 0.8fr 1.2fr;
+
+    gap: 60px;
+
+    align-items: center;
+
+}
+
+
+.themed-text p {
+
+    margin-bottom: 25px;
+
+    font-size: 22px;
+
+    line-height: 1.6;
+
+}
+
+
+.themed-text .big-text {
+
+    color: var(--rosa-oscuro);
+
+    font-family: "DM Serif Display", Georgia, serif;
+
+    font-size: 50px;
+
+}
+
+
+.highlight-text {
+
+    padding-left: 25px;
+
+    border-left: 3px solid var(--rosa-oscuro);
+
+    color: var(--rosa-oscuro);
+
+    font-style: italic;
+
+}
+
+
+/* =====================================================
+   BROCHES
+===================================================== */
+
+.clips-section {
+
+    background: var(--crema);
+
+}
+
+
+.clips-content {
+
+    display: grid;
+
+    grid-template-columns: 1.3fr 0.7fr;
+
+    gap: 70px;
+
+    align-items: center;
+
+}
+
+
+.clips-gallery {
+
+    grid-template-columns: repeat(2, 1fr);
+
+}
+
+
+.clips-text .big-text {
+
+    margin-bottom: 25px;
+
+    color: var(--rosa-oscuro);
+
+    font-family: "DM Serif Display", Georgia, serif;
+
+    font-size: 48px;
+
+}
+
+
+.clips-text p:last-child {
+
+    font-size: 21px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =====================================================
+   COMBOS
+===================================================== */
+
+.combos-section {
+
+    background: var(--rosa);
+
+}
+
+
+.combos-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+
+}
+
+
+.combo-card {
+
+    position: relative;
+
+    padding: 40px;
+
+    background: var(--crema);
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease;
+
+}
+
+
+.combo-card::before {
+
+    content: "✦";
+
+    position: absolute;
+
+    right: 25px;
+    top: 20px;
+
+    color: var(--rosa);
+
+    font-size: 35px;
+
+}
+
+
+.combo-card:hover {
+
+    transform: translateY(-8px);
+
+    background: var(--rosa-claro);
+
+}
+
+
+.combo-card > span {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    color: var(--rosa-oscuro);
+
+}
+
+
+.combo-card h3 {
+
+    margin: 20px 0 10px;
+
+    font-size: 35px;
+
+    color: var(--texto);
+
+}
+
+
+.combo-price {
+
+    color: var(--rosa-oscuro);
+
+    font-size: 32px;
+
+    font-weight: bold;
+
+}
+
+
+.saving {
+
+    display: inline-block;
+
+    margin-top: 12px;
+
+    padding: 7px 12px;
+
+    border-radius: 50px;
+
+    background: var(--rosa);
+
+    color: var(--texto);
+
+    font-size: 14px;
+
+}
+
+
+/* =====================================================
+   NUESTRO TRABAJO
+===================================================== */
+
+.work-section {
+
+    background: var(--crema);
+
+}
+
+
+.work-gallery {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+
+}
+
+
+.work-item {
+
+    padding: 0;
+
+    overflow: hidden;
+
+    background: none;
+
+    cursor: pointer;
+
+}
+
+
+.work-item img {
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+
+}
+
+
+.work-item:hover img {
+
+    transform: scale(1.08);
+
+}
+
+
+/* =====================================================
+   FECHAS
+===================================================== */
+
+.dates-section {
+
+    background: var(--rosa-claro);
+
+}
+
+
+.dates-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+
+}
+
+
+.date-card {
+
+    min-height: 200px;
+
+    padding: 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    background: var(--crema);
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease;
+
+}
+
+
+.date-card:hover {
+
+    transform: translateY(-8px);
+
+    background: var(--rosa);
+
+}
+
+
+.date-card span {
+
+    color: var(--rosa-oscuro);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.date-card h3 {
+
+    color: var(--rosa-oscuro);
+
+    font-size: 27px;
+
+}
+
+
+/* =====================================================
+   PEDIDO
+===================================================== */
+
+.order-section {
+
+    background: var(--rosa);
+
+    text-align: center;
+
+}
+
+
+.order-content {
+
+    max-width: 800px;
+
+    margin: auto;
+
+}
+
+
+.order-content .section-number {
+
+    color: var(--crema);
+
+}
+
+
+.order-content h2 {
+
+    color: var(--crema);
+
+}
+
+
+.order-content p:not(.section-number) {
+
+    max-width: 600px;
+
+    margin: 30px auto;
+
+    color: var(--crema);
+
+    font-size: 21px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =====================================================
+   CONTACTO
+===================================================== */
+
+.contact-section {
+
+    background: var(--rosa-oscuro);
+
+    text-align: center;
+
+}
+
+
+.contact-content {
+
+    max-width: 800px;
+
+    margin: auto;
+
+}
+
+
+.contact-section .section-number {
+
+    color: var(--rosa-claro);
+
+}
+
+
+.contact-section h2 {
+
+    color: var(--crema);
+
+}
+
+
+.contact-section > .contact-content > p:not(.section-number) {
+
+    margin: 30px auto;
+
+    color: var(--rosa-claro);
+
+    font-size: 21px;
+
+    line-height: 1.6;
+
+}
+
+
+.contact-links {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.contact-link {
+
+    padding: 17px 30px;
+
+    border: 1px solid var(--rosa-claro);
+
+    border-radius: 100px;
+
+    color: var(--crema);
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+
+}
+
+
+.contact-link:hover {
+
+    background: var(--crema);
+
+    color: var(--rosa-oscuro);
+
+    transform: translateY(-4px);
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer {
+
+    padding: 35px 8%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    background: var(--crema);
+
+    color: var(--rosa-oscuro);
+
+}
+
+
+.footer p:first-child {
+
+    font-family: "DM Serif Display", Georgia, serif;
+
+    font-size: 22px;
+
+}
+
+
+.footer p:last-child {
+
+    font-size: 14px;
+
+}
+
+
+/* =====================================================
+   LIGHTBOX
+===================================================== */
+
+.lightbox {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background: rgba(91, 36, 64, 0.9);
+
+    backdrop-filter: blur(10px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+
+}
+
+
+.lightbox.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+}
+
+
+.lightbox img {
+
+    max-width: min(900px, 90vw);
+
+    max-height: 85vh;
+
+    width: auto;
+
+    border-radius: 20px;
+
+    object-fit: contain;
+
+}
+
+
+.lightbox-close {
+
+    position: absolute;
+
+    top: 25px;
+    right: 30px;
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+
+    background: var(--crema);
+
+    color: var(--rosa-oscuro);
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+}
+
+
+/* =====================================================
+   ANIMACIONES DE ENTRADA
+===================================================== */
+
+.reveal {
+
+    opacity: 0;
+
+    transform: translateY(35px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+
+}
+
+
+.reveal.visible {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+
+/* =====================================================
+   RESPONSIVE — TABLET
+===================================================== */
+
+@media (max-width: 1050px) {
+
+    .nav-menu {
+        gap: 15px;
+    }
+
+    .nav-menu a {
+        font-size: 13px;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .flowers-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .flowers-grid .flower-card:last-child {
+        grid-column: 1 / -1;
+        max-width: 500px;
+        width: 100%;
+        margin: auto;
+    }
+
+    .combos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dates-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVE — CELULAR
+===================================================== */
+
+@media (max-width: 750px) {
+
+    section {
+        padding: 85px 6%;
+    }
+
+
+    /* NAV */
+
+    .navbar {
+        padding: 16px 6%;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        padding: 25px;
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        background: var(--crema);
+
+        border-bottom: 1px solid rgba(196, 54, 112, 0.15);
+
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu a {
+        padding: 12px 0;
+        font-size: 17px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: 80vh;
+    }
+
+    .hero h1 {
+
+        font-size: clamp(55px, 16vw, 85px);
+
+        letter-spacing: -2px;
+
+    }
+
+    .hero-text {
+        font-size: 18px;
+    }
+
+    .hero-decoration {
+        right: -20px;
+        bottom: 5%;
+        font-size: 150px;
+    }
+
+
+    /* TITULOS */
+
+    h2 {
+        font-size: clamp(48px, 14vw, 70px);
+    }
+
+
+    /* NOSOTROS */
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .about-text p {
+        font-size: 20px;
+    }
+
+
+    /* SERVICIOS */
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* FLORES */
+
+    .flowers-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .flowers-grid .flower-card:last-child {
+        grid-column: auto;
+        max-width: none;
+    }
+
+    .flower-image {
+        height: 400px;
+    }
+
+
+    /* GALERÍAS */
+
+    .personalized-gallery,
+    .themed-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    /* TEMATIZADOS */
+
+    .themed-content {
+        grid-template-columns: 1fr;
+    }
+
+    .themed-text .big-text {
+        font-size: 42px;
+    }
+
+
+    /* BROCHES */
+
+    .clips-content {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* COMBOS */
+
+    .combos-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* TRABAJOS */
+
+    .work-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    /* FECHAS */
+
+    .dates-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* CONTACTO */
+
+    .contact-links {
+        flex-direction: column;
+    }
+
+    .contact-link {
+        width: 100%;
+    }
+
+
+    /* FOOTER */
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+
+    /* LLUVIA */
+
+    .flower-particle {
+        font-size: 14px;
+    }
+
+}
+
+
+/* =====================================================
+   REDUCIR MOVIMIENTO
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}
