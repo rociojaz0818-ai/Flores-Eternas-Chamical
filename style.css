@@ -705,10 +705,9 @@ h2 span {
 
 .personalized-gallery {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
 }
-
 .personalized-gallery img {
     width: 100%;
     aspect-ratio: 4 / 5;
