@@ -703,7 +703,19 @@ h2 span {
     line-height: 1.6;
 }
 
-.personalized-gallery,
+.personalized-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.personalized-gallery img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    display: block;
+    border-radius: 4px;
+}
 .themed-gallery,
 .clips-gallery {
     display: grid;
